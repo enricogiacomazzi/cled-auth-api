@@ -24,10 +24,12 @@ export default async function createServer() {
     });
 
     await app.register(autoLoad, {
-        dir: join(__dirname, 'routes'),
-        options: { prefix: '/api' },
+        dir: join(__dirname, 'auth'),
+        options: { prefix: '/auth' },
         forceESM: true
     });
+
+
 
     await app.ready();
     console.log(app.printRoutes());
